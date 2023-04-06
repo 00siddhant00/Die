@@ -11,8 +11,8 @@ This repository contains a prototype for a platformer game called Die, based on 
 
 **ScreenShots:**
 
-<img src="Assets/Images/ScreenShots/1.png" alt="Image 1" width="200"/>
-<img src="Assets/Images/ScreenShots/4.png" alt="Image 1" width="200"/>
+<img src="Assets/Images/ScreenShots/1.png" alt="Image 1"/>
+<img src="Assets/Images/ScreenShots/4.png" alt="Image 2"/>
 
 **Installation:**
 
@@ -29,15 +29,15 @@ This repository contains a prototype for a platformer game called Die, based on 
 
 **Contributing:**
 
-Contributions are always welcome!
-Fork the repository and create a new branch with your changes.
-Submit a pull request for review and approval.
+- Contributions are always welcome!
+- Fork the repository and create a new branch with your changes.
+- Submit a pull request for review and approval.
 
 **Credits:**
 
-Developed by [Sid](https://www.instagram.com/00_siddhant_00/).
-Secondry code and logic help [Dev Patil](https://www.instagram.com/dev0910/).
-Level Design by [Harsh Kanaskar](https://www.instagram.com/harshkanaskar/).
+- Developed by [Sid](https://www.instagram.com/00_siddhant_00/).
+- Secondry code and logic help [Dev Patil](https://www.instagram.com/dev0910/).
+- Level Design by [Harsh Kanaskar](https://www.instagram.com/harshkanaskar/).
 
 **License:**
 
