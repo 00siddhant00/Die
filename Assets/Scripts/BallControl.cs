@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class BallControl : MonoBehaviour
 {
@@ -92,7 +93,7 @@ public class BallControl : MonoBehaviour
         // }
         // catch(NullReferenceException n)
         // {
-        print("Hi");
+        //print("Hi");
         // }
         // platform = proxyPlat;
         for (int i = 0; i < platform.Length; i++)
@@ -118,7 +119,7 @@ public class BallControl : MonoBehaviour
             // times++;
             // if (times <= died) return;
             int get = GetRandom(platform.Length);
-            print(get);
+            //print(get);
             // if (get == )
             // {
             platform[get].SetActive(false);
@@ -148,7 +149,7 @@ public class BallControl : MonoBehaviour
             }
             attempts++;
         } while (get == oldval && attempts > 10);
-        Debug.Log(attempts + " attempts");
+        //Debug.Log(attempts + " attempts");
         oldval = get;
         return get;
     }
@@ -235,26 +236,32 @@ public class BallControl : MonoBehaviour
             addTime = true;
             // BeginRandom();
             if (other.gameObject.tag == "ground") isGrounded = true;
-            else if (other.gameObject.tag == "Win") LevelManager.LoadNextLevel();
+            else if (other.gameObject.tag == "Move")
+            {
+                transform.parent = other.gameObject.transform;
+                isGrounded = true;
+            }
 
             // Visualize the raycast
             Debug.DrawRay(transform.position, Vector3.down * distance, Color.green);
         }
         else
         {
+            transform.parent = null;
             // Visualize the raycast
             Debug.DrawRay(transform.position, Vector3.down * distance, Color.red);
         }
     }
 
-    //void OnCollisionEnter2D(Collision2D other)
-    //{
-    //    // animate = false;
-    //    addTime = true;
-    //    // BeginRandom();
-    //    if (other.gameObject.tag == "ground") isGrounded = true;
-    //    else if (other.gameObject.tag == "Win") LevelManager.LoadNextLevel();
-    //}
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        // animate = false;
+        //addTime = true;
+        //// BeginRandom();
+        //if (other.gameObject.tag == "ground") isGrounded = true;
+        if (other.gameObject.tag == "Win") LevelManager.LoadNextLevel();
+        else if (other.gameObject.tag == "Respawn") LevelManager.Won();
+    }
 
     void OnCollisionExit2D(Collision2D other)
     {
